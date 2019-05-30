@@ -113,7 +113,7 @@ static CGFloat const FIELD_MARGIN_X = 4.0; // Note: Same as CLTokenView.PADDING_
         return;
     }
 
-    [self.tokens addObject:token];
+    [self appendToken:token];
     CLTokenView *tokenView = [[CLTokenView alloc] initWithToken:token font:self.textField.font];
     if ([self respondsToSelector:@selector(tintColor)]) {
         tokenView.tintColor = self.tintColor;
@@ -133,6 +133,10 @@ static CGFloat const FIELD_MARGIN_X = 4.0; // Note: Same as CLTokenView.PADDING_
 
     [self updatePlaceholderTextVisibility];
     [self repositionViews];
+}
+
+- (void)appendToken:(CLToken *)token {
+    [self.tokens addObject:token];
 }
 
 - (void)removeToken:(CLToken *)token

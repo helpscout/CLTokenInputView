@@ -101,7 +101,11 @@ NS_ASSUME_NONNULL_BEGIN
 @property (readonly, nonatomic) CGFloat textFieldDisplayOffset;
 @property (copy, nonatomic, nullable) NSString *text;
 
+// Add Token is responsible for adding the token view as a subview
 - (void)addToken:(CLToken *)token;
+// Append Token is responsible for appending the token to it's internal storage of tokens
+// which can be accessed through the `allTokens` property
+- (void)appendToken:(CLToken *)token;
 - (void)removeToken:(CLToken *)token;
 - (nullable CLToken *)tokenizeTextfieldText;
 
