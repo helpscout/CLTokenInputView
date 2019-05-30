@@ -34,6 +34,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 // For iOS 6 compatibility, provide the setter tintColor
 - (void)setTintColor:(nullable UIColor *)tintColor;
+- (void)updateLabelAttributedText;
 
 @end
 
